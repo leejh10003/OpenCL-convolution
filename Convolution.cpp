@@ -129,7 +129,7 @@ int main(int argc, char** argv)
 	checkErr(errNum, "clCreateBuffer(mask)");
 
 	outputSignalBuffer = clCreateBuffer(context, CL_MEM_WRITE_ONLY,
-	sizeof(cl_uint) * outputSignalHeight * outputSignalWidth, NULL, &errNum);
+	sizeof(cl_uint) * outputSignalHeight * outputSignalWidth, 0, &errNum);
 	checkErr(errNum, "clCreateBuffer(outputSignal)");
 
 	queue = clCreateCommandQueue(context, deviceIDs[0], NULL, &errNum);
